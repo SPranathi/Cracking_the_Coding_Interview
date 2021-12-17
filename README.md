@@ -4,8 +4,7 @@ This repo contains c++ solutions for Gayle Laakmann McDowell's  [Cracking the Co
 
 Write-ups contain the following sections, if applicable:
 <ul>
-  <li>Problem - problem statement</li>
-   <li>Implementation - an explanation of the solution</li>
+   <li>Problem - problem statement</li>
    <li>Time complexity - the big-O time complexity of the solution.</li>
    <li>Space complexity - the same as above, except for space instead of time.</li>
 </ul>
