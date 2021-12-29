@@ -16,8 +16,29 @@ Space complexity: O(1). We only need to allocate enough space for one matrix cel
 */ 
 #include<iostream>
 using namespace std;
-void rotate(int **arr,int n){
-    
+void rotate(int **m,int n){
+    if(n==0)
+        return ;
+    for(int l=0;l<n/2;l++){
+        int first=l;
+        int last=n-1-l;
+        for(int i=first;i<last;i++){
+            int offset=i-first;
+            int top=m[first][i];
+
+            //move left to top
+            m[first][i]=m[last-offset][first];
+
+            //move bottom to left
+            m[last-offset][first]=m[last][last-offset];
+
+            //move right to bottom
+            m[last][last-offset]=m[i][last];
+
+            //move top to right
+            m[i][last]=top;
+        }
+    }
 }
 
 int main(){
@@ -32,7 +53,8 @@ int main(){
     rotate(arr,n);
     for(int i=0;i<n;i++){
         for(int j=0;j<n;j++)
-            cout<<arr[i][j];
+            cout<<arr[i][j]<<" ";
+        cout<<endl;
     }
 
 }
