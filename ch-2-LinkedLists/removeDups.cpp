@@ -12,3 +12,8 @@ work over each element.
 SPACE COMPLEXITY:
 O(n), because in the worst case we store each element in the hashmap.
 */ 
+#include<iostream>
+using namespace std;
+int main(){
+    
+}
