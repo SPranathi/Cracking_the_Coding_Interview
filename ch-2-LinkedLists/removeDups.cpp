@@ -28,29 +28,25 @@ class node{
     }
 };
 
-void removeDups(node<int> *head){
-    set<int> count;
-    node<int> *prev=head;
-    node<int> *cur=prev->next;
-    count.insert(head->data);
+void removeDuplicates(node<int> *head){
+    // Hash to store seen values
+    unordered_set<int> seen;
+
+    /* Pick elements one by one */
+    node<int> *prev=NULL;
+    node<int> *cur=head;
+
     while(cur!=NULL){
-        if(count.find(cur->data)!=count.end()){
-            cout<<cur->data<<"if"<<endl;
-            node<int> *temp=cur;
-            if(cur->next!=NULL){
-                cur=cur->next;
-                prev->next=cur;
-            }
-            else
-                prev->next=NULL;
-            delete temp;
+        // If current value is seen before
+        if(seen.find(cur->data)!=seen.end()){
+            prev->next=cur->next;
+            delete (cur);
         }
         else{
-            count.insert(cur->data);
-                    cout<<cur->data<<"else"<<endl;
-    }
-        prev=cur;
-        cur=cur->next;
+            seen.insert(cur->data);
+            prev=cur;
+        }
+        cur=prev->next;
     }
 
 }
@@ -85,8 +81,8 @@ void print(node<int> *head){
 int main(){
     node<int> *head;
     head=takeinput();
-    print(head);
-    removeDups(head);
+    //print(head);
+    removeDuplicates(head);
     print(head);
 }
 
