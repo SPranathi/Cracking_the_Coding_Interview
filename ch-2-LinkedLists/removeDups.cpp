@@ -12,7 +12,7 @@ O(n), because we iterate through the singly linked list only once, performing co
 work over each element.
 
 SPACE COMPLEXITY:
-O(n), because in the worst case we store each element in the hashmap.
+O(n), because in the worst case we store each element in the set.
 */ 
 #include<bits/stdc++.h>
 using namespace std;
