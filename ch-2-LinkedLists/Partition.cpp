@@ -42,11 +42,13 @@ node<int> *partition(node<int> *n,int x){
         node<int> *nxt=n->next;
         if(n->data<x){
             //insert node at head
+            cout<<head->data<<"-";
             n->next=head;
             head=n;
         }
         else{
             //insert node at tail
+            cout<<tail->data<<"--";
             tail->next=n;
             tail=n;
         }
