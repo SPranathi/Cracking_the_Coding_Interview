@@ -13,6 +13,14 @@ O(n)
 */ 
 #include<bits/stdc++.h>
 using namespace std;
+
+class SetOfStacks{
+    public:
+    void push(int val){
+        stack<int> top_stack=top==0 
+        
+    }
+};
 int main(){
-    
+
 }
